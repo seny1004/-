@@ -1,0 +1,25 @@
+import sys
+input = sys.stdin.readline
+N = int(input())
+
+deque = list()
+
+for i in range(N):
+  n = list(input().split())
+   
+  if n[0] == 'push_front':
+    deque.insert(0, n[1])
+  elif n[0] == 'push_back':
+    deque.append(n[1])
+  elif n[0] == 'pop_front':
+    print(deque.pop(0)) if deque else print(-1)
+  elif n[0] == 'pop_back':
+    print(deque.pop(-1)) if deque else print(-1)
+  elif n[0] == 'size':
+    print(len(deque))
+  elif n[0] == 'empty':
+    print(0) if deque else print(1)
+  elif n[0] == 'front':
+    print(deque[0]) if deque else print(-1)
+  elif n[0] == 'back':
+     print(deque[-1]) if deque else print(-1)
